@@ -1,28 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PyGenius.MainPage">
+             x:Class="PyGenius.MainPage"
+             BackgroundColor="#2C2C2C">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
-            <Label x:Name="ChatDisplay" Text="Welcome to Python Tutor!" FontSize="18"/>
+        <VerticalStackLayout Padding="25" Spacing="15">
+            <Label x:Name="ChatDisplay" 
+                   Text="Welcome to Python Tutor!" 
+                   FontSize="20" 
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
 
-            <Button x:Name="btnGenerate" Text="Generate Challenge" Clicked="OnGenerateChallengeClicked"/>
-            <Editor x:Name="CodeEditor"
-        AutoSize="TextChanges"
-                    HeightRequest="200"
-        FontFamily="Consolas"
-        FontSize="14"
-        BackgroundColor="Black"
-        TextColor="White"
-        Placeholder="Write Python code here..."
-   
-                    TextChanged="OnCodeEditorTextChanged"/>
-            
-            <Button x:Name="btnSubmit" Text="Submit Code" Clicked="OnSubmitCodeClicked"/>
+            <Button x:Name="btnGenerate" 
+                    Text="Generate Challenge" 
+                    Clicked="OnGenerateChallengeClicked"
+                    BackgroundColor="#F7374F"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"/>
 
-            <Label x:Name="lblProgress" Text="" IsVisible="False" FontSize="16"/>
+            <Frame BackgroundColor="#522546" 
+                   CornerRadius="10"
+                   Padding="10">
+                <Editor x:Name="CodeEditor"
+                        AutoSize="TextChanges"
+                        HeightRequest="200"
+                        FontFamily="Consolas"
+                        FontSize="14"
+                        BackgroundColor="#2C2C2C"
+                        TextColor="White"
+                        Placeholder="Write Python code here..."
+                        TextChanged="OnCodeEditorTextChanged"/>
+            </Frame>
+
+            <Button x:Name="btnSubmit" 
+                    Text="Submit Code" 
+                    Clicked="OnSubmitCodeClicked"
+                    BackgroundColor="#88304E"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"/>
+
+            <Label x:Name="lblProgress" 
+                   Text="" 
+                   IsVisible="False" 
+                   FontSize="16" 
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

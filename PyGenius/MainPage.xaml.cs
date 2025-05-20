@@ -9,7 +9,7 @@ namespace PyGenius
 {
     public partial class MainPage : ContentPage
     {
-        private readonly string _apiKey = "AIzaSyB2wUdu_Hc-2cXVvvKsuldgI9QAEV-03pE"; // Replace with your API key
+        private readonly string _apiKey = "AIzaSyDbIleqpSgwVpymH99bScBp_9zPT6DPy4s"; // Replace with your API key
         private readonly string _baseUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
      
         private string challenge;
@@ -26,7 +26,7 @@ namespace PyGenius
             lblProgress.Text = "Generating challenge...";
             btnGenerate.IsEnabled = false;
 
-             challenge = await GetGeminiResponse("Give me a short, beginner-friendly C# coding challenge. Only return one of these: 'Create a for loop', 'Create a foreach loop', 'Use an array', 'Define a class', 'Write a method'these are examples but like these u can change the method thing and use like classes etc");
+             challenge = await GetGeminiResponse("Give me a short, beginner-friendly python coding challenge. Only return one of these: 'Create a for loop', 'Create a foreach loop', 'Use an array', 'Define a class', 'Write a method'these are examples but like these u can change the method thing and use like classes etc. and dont repeat the same challange two times in a row AND DO NOT tell to Create a function");
             DisplayChallenge(challenge);
 
             lblProgress.IsVisible = false;
@@ -54,7 +54,7 @@ namespace PyGenius
             btnSubmit.IsEnabled = false;
 
             string validationResult = await GetGeminiResponse(
-                $"Analyze the following Python code and ONLY return '✅' if the code is syntactically valid and runs without errors AND correctly implements the following C# coding challenge: '{challenge}'. Explain how the Python code fulfills the requirements of the challenge. Otherwise, return '❌' and provide a clear explanation of the errors or why the code does not function as intended OR why it does not correctly implement the given C# challenge.:\n```{userCode}```"
+                $"Analyze the following Python code and ONLY return '✅' if the code is syntactically valid and runs without errors AND correctly implements the following C# coding challenge: '{challenge}'. Explain how the Python code fulfills the requirements of the challenge. Otherwise, return '❌' and provide a clear explanation of the errors or why the code does not function as intended OR why it does not correctly implement the given python challenge and  GIVE steps to actualy create it.:\n```{userCode}```"
             );
 
             DisplayValidationResult(validationResult.Trim());
