@@ -9,7 +9,7 @@ namespace PyGenius
 {
     public partial class MainPage : ContentPage
     {
-        private readonly string _apiKey = "AIzaSyDbIleqpSgwVpymH99bScBp_9zPT6DPy4s"; // Replace with your API key
+        private readonly string _apiKey = "YOUR_API_KEY"; // Replace with your API key
         private readonly string _baseUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
      
         private string challenge;
